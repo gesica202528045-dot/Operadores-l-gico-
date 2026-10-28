@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio 2 - Acesso Permitido</title>
+  <style>
+    .verde {
+      color: green;
+      font-weight: bold;
+    }
+    .vermelho {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Verificação de Acesso</h3>
+
+  <label>
+    <input type="checkbox" id="checkLogin"> Tenho Login
+  </label><br>
+
+  <label>
+    <input type="checkbox" id="checkSenha"> Tenho Senha
+  </label><br><br>
+
+  <button onclick="verificarAcesso()">Verificar</button>
+
+  <p id="mensagem"></p>
+
+  <script>
+    function verificarAcesso() {
+      const temLogin = document.getElementById('checkLogin').checked;
+      const temSenha = document.getElementById('checkSenha').checked;
+      const msg = document.getElementById('mensagem');
+
+      // Utilizando o operador lógico && (E)
+      if (temLogin && temSenha) {
+        msg.textContent = "Acesso liberado";
+        msg.className = "verde";
+      } else {
+        msg.textContent = "Acesso negado";
+        msg.className = "vermelho";
+      }
+    }
+  </script>
+
+</body>
+</html>
